@@ -42,9 +42,9 @@ function Widgets() {
       <div className='flex justify-between items-center text-gray-500 mb-5'>
         <h2 className='text-xl'>Contacts</h2>
         <div className='flex space-x-3'>
-          <VideoCameraIcon className='h-6' />
-          <MagnifyingGlassIcon className='h-6' />
-          <EllipsisHorizontalIcon className='h-6' />
+          <VideoCameraIcon className='h-6 cursor-pointer' />
+          <MagnifyingGlassIcon className='h-6 cursor-pointer' />
+          <EllipsisHorizontalIcon className='h-6 cursor-pointer' />
         </div>
       </div>
       {contacts.map((contact) => (
