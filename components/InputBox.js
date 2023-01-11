@@ -98,7 +98,7 @@ function InputBox() {
             0,
             session.user.name.indexOf(' ')
           )}?`}
-          className='rounded-full h-12 bg-gray-100 flex-grow px-5 focus:outline-none flex-1'
+          className='rounded-full h-12 bg-gray-100 flex-grow px-5 focus:outline-none w-full placeholder:text-xs sm:placeholder:text-base'
           ref={inputRef}
           onChange={handleTextChange}
         />
@@ -115,11 +115,15 @@ function InputBox() {
       <div className='flex justify-evenly p-3 border-t'>
         <div className='inputIcon'>
           <VideoCameraIcon className='h-7 text-red-500' />
-          <p className='text-xs sm:text-sm xl:text-base'>Live Video</p>
+          <p className='sm:text-sm xl:text-base'>
+            Live <span className='hidden sm:inline'>Video</span>
+          </p>
         </div>
         <div onClick={() => imageRef.current.click()} className='inputIcon'>
           <CameraIcon className='h-7 text-green-400' />
-          <p className='text-xs sm:text-sm xl:text-base'>Photo/Video</p>
+          <p className='sm:text-sm xl:text-base'>
+            Photo<span className='hidden sm:inline'>/Video</span>
+          </p>
           <input
             type='file'
             onChange={(e) => handleImage(e)}
@@ -129,7 +133,9 @@ function InputBox() {
         </div>
         <div className='inputIcon'>
           <FaceSmileIcon className='h-7 text-yellow-300' />
-          <p className='text-xs sm:text-sm xl:text-base'>Feeling/Activity</p>
+          <p className='sm:text-sm xl:text-base'>
+            Feeling<span className='hidden sm:inline'>/Activity</span>
+          </p>
         </div>
       </div>
       <div

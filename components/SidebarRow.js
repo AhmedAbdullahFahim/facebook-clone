@@ -11,7 +11,7 @@ function SidebarRow({ src, title, Icon }) {
           className='rounded-full object-cover mr-1'
         />
       )}
-      {Icon && <Icon className='h-8 w-8 text-blue-500 mr-1' />}
+      {Icon && <Icon className='h-6 w-6 sm:h-8 sm:w-8 text-blue-500 mr-1' />}
       <p className='hidden md:inline-flex font-medium'>{title}</p>
     </div>
   )

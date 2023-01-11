@@ -6,7 +6,6 @@ import {
 } from '@heroicons/react/24/outline'
 
 function Post({ name, profileImage, postImage, timestamp, message }) {
-  console.log('this is a post')
   return (
     <div className='space-y-4 bg-white mb-6 pb-2 rounded-xl shadow-md'>
       <div className='flex space-x-2 pt-3 px-3'>
