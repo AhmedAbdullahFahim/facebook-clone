@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header'
-import { useSession } from 'next-auth/react'
+import { useSession, getProviders } from 'next-auth/react'
 import Login from '../components/Login'
 import Sidebar from '../components/Sidebar.js'
 import Feed from '../components/Feed'
@@ -8,11 +8,11 @@ import Widgets from '../components/Widgets'
 import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 import { db } from '../firebase'
 
-export default function Home({ posts }) {
+export default function Home({ posts, providers }) {
   const { data: session } = useSession()
 
   if (!session) {
-    return <Login />
+    return <Login providers={providers} />
   }
   return (
     <div className='h-screen bg-gray-100 overflow-hidden'>
@@ -30,6 +30,7 @@ export default function Home({ posts }) {
 }
 
 export async function getServerSideProps() {
+  const providers = await getProviders()
   const querySnapshot = await getDocs(
     query(collection(db, 'posts'), orderBy('timestamp', 'desc'))
   )
@@ -41,6 +42,7 @@ export async function getServerSideProps() {
   return {
     props: {
       posts: posts,
+      providers: providers,
     },
   }
 }
