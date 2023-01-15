@@ -18,6 +18,7 @@ export default function Home({ posts, providers }) {
     <div className='h-screen bg-gray-100 overflow-hidden'>
       <Head>
         <title>Facebook</title>
+        <meta charSet='utf-8' />
       </Head>
       <Header />
       <main className='flex'>
