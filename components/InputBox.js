@@ -144,7 +144,9 @@ function InputBox() {
         } transition-opacity duration-150 ease-in-out`}
       >
         <button
-          className='text-white font-bold bg-blue-500 rounded-md px-4 py-1 h-12 w-full my-1 transition hover:bg-blue-400 duration-100 ease-in-out'
+          className={`text-white font-bold bg-blue-500 rounded-md px-4 py-1 h-12 w-full my-1 transition hover:bg-blue-400 duration-100 ease-in-out ${
+            !showSubmit && 'pointer-events-none'
+          }`}
           type='submit'
         >
           Post
