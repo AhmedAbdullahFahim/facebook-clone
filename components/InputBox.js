@@ -52,7 +52,7 @@ function InputBox() {
       await addDoc(collection(db, 'posts'), {
         message: inputRef.current.value,
         name: session.user.name,
-        email: session.user.email,
+        // email: session.user.email,
         profileImage: session.user.image,
         timestamp: serverTimestamp(),
       }).then((document) => {
