@@ -19,6 +19,7 @@ export default function Home({ posts, providers }) {
       <Head>
         <title>Facebook</title>
         <meta charSet='utf-8' />
+        <link rel='icon' href='/logo.png' />
       </Head>
       <Header />
       <main className='flex'>
